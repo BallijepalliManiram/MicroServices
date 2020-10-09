@@ -1,0 +1,5 @@
+package com.vensai.springboot.limitsservice.controller;
+
+public class LimitController {
+
+}

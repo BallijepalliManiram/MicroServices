@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+E:\LimitsService\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2258349313.index
+888643072.index
+1546119548.index
+796566110.index
+720162400.index
+461614062.index
