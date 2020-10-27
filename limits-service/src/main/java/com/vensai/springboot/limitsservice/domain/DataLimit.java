@@ -7,15 +7,15 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties("limits-service")
 public class DataLimit {
 
-	private int max;
+	
 	private int min;
+	private int max;
 
 	public DataLimit() {
 
 	}
 
 	public DataLimit(int max, int min) {
-		super();
 		this.max = max;
 		this.min = min;
 	}
