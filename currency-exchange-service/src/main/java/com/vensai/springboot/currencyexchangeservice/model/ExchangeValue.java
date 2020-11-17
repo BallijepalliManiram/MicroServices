@@ -2,11 +2,23 @@ package com.vensai.springboot.currencyexchangeservice.model;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="exchange_value1")
 public class ExchangeValue {
 
+	@Id
+	@Column(name="id")
 	private int id;
+	@Column(name="exchange_from")
 	private String from;
+	@Column(name="exchange_to")
 	private String to;
+	@Column(name="converttion_value")
 	private BigDecimal convertionValue;
 	private int port;
 

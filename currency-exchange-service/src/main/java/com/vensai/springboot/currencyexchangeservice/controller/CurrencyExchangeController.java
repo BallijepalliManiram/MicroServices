@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vensai.springboot.currencyexchangeservice.model.ExchangeValue;
+import com.vensai.springboot.currencyexchangeservice.repository.ExchangeValueRepository;
 
 @RestController
 public class CurrencyExchangeController {
@@ -16,9 +17,13 @@ public class CurrencyExchangeController {
 	@Autowired
 	private Environment environment;
 	
+	@Autowired
+	private ExchangeValueRepository repository;
+	
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
 	public ExchangeValue getExchangeValues(@PathVariable String from , @PathVariable String to) {
-		ExchangeValue exchangeValue = new ExchangeValue(1000, from, to, BigDecimal.valueOf(65));
+		/*ExchangeValue exchangeValue = new ExchangeValue(1000, from, to, BigDecimal.valueOf(65));*/
+		ExchangeValue exchangeValue = repository.findByFromAndTo(from, to);
 		exchangeValue.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 		return exchangeValue;
 	}
